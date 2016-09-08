@@ -13,8 +13,8 @@ package controllers
 //模块管理--公告管理
 import "strconv"
 import "github.com/revel/revel"
-import "admin/app/models"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/app/models"
+import "github.com/blackmady/NoneCMS/utils"
 
 type Announce struct {
 	*revel.Controller

@@ -13,7 +13,7 @@ package models
 //内容评论表
 import "time"
 import "fmt"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

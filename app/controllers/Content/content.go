@@ -14,10 +14,10 @@ package controllers
 import "os"
 import "strconv"
 import "strings"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "github.com/revel/revel"
 import "github.com/revel/config"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 
 type Content struct {
 	*revel.Controller

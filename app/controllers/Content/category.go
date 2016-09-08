@@ -14,8 +14,8 @@ package controllers
 import "strconv"
 import "encoding/json"
 import "github.com/revel/revel"
-import "admin/app/models"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/app/models"
+import "github.com/blackmady/NoneCMS/utils"
 
 type Category struct {
 	*revel.Controller

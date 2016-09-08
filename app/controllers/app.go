@@ -12,15 +12,15 @@ package controllers
 
 //后台首页
 import "os"
-import "fmt"
+
 import "strconv"
 import "runtime"
 import "strings"
 import "github.com/revel/revel"
 import "github.com/revel/config"
-import "github.com/shirou/gopsutil"
-import "admin/app/models"
-import "admin/utils"
+
+import "github.com/blackmady/NoneCMS/app/models"
+import "github.com/blackmady/NoneCMS/utils"
 
 type App struct {
 	*revel.Controller
@@ -113,18 +113,18 @@ func (c App) Main(admin *models.Admin) revel.Result {
 		system_info["mysql_varsion"] = admin.GetMysqlVer()
 
 		//服务器监控
-		memory_info, _ := gopsutil.VirtualMemory()
-		system_info["main_server_total_memory"] = utils.FileSize(int(memory_info.Total))
-		system_info["main_server_free_memory"] = utils.FileSize(int(memory_info.Free))
-		system_info["main_server_available_memory"] = utils.FileSize(int(memory_info.Available))
-		system_info["main_server_UsedPercent_memory"] = fmt.Sprintf("%10.2f%%", memory_info.UsedPercent)
+		// memory_info, _ := gopsutil.VirtualMemory()
+		// system_info["main_server_total_memory"] = utils.FileSize(int(memory_info.Total))
+		// system_info["main_server_free_memory"] = utils.FileSize(int(memory_info.Free))
+		// system_info["main_server_available_memory"] = utils.FileSize(int(memory_info.Available))
+		// system_info["main_server_UsedPercent_memory"] = fmt.Sprintf("%10.2f%%", memory_info.UsedPercent)
 
-		host, _ := gopsutil.HostInfo()
-		system_info["main_server_Hostname"] = host.Hostname
-		system_info["main_server_OS"] = host.OS
-		system_info["main_server_Platform"] = host.Platform
-		system_info["main_server_PlatformVersion"] = host.PlatformVersion
-		system_info["main_server_PlatformFamily"] = host.PlatformFamily
+		// host, _ := gopsutil.HostInfo()
+		// system_info["main_server_Hostname"] = host.Hostname
+		// system_info["main_server_OS"] = host.OS
+		// system_info["main_server_Platform"] = host.Platform
+		// system_info["main_server_PlatformVersion"] = host.PlatformVersion
+		// system_info["main_server_PlatformFamily"] = host.PlatformFamily
 
 		//快捷面板
 		admin_panel := new(models.Admin_Panel)

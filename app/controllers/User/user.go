@@ -16,8 +16,8 @@ import "time"
 import "strconv"
 import "strings"
 import "github.com/revel/revel"
-import "admin/app/models"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/app/models"
+import "github.com/blackmady/NoneCMS/utils"
 import "github.com/dchest/captcha"
 
 type User struct {

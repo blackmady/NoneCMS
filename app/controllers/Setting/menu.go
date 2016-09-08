@@ -13,7 +13,7 @@ package controllers
 // 菜单设置
 import "strconv"
 import "github.com/revel/revel"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 
 type Menu struct {
 	*revel.Controller

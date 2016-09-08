@@ -14,10 +14,10 @@ package controllers
 import "runtime"
 import "strconv"
 import "path/filepath"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "github.com/revel/revel"
 import "github.com/revel/revel/modules/jobs/app/jobs"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 
 var BasePath, _ = filepath.Abs("")
 

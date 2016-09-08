@@ -12,7 +12,7 @@ package models
 
 //来源管理
 import "time"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

@@ -12,7 +12,7 @@ package controllers
 
 //界面首页
 import "strconv"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 import "github.com/revel/revel"
 
 type Style struct {

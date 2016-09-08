@@ -12,7 +12,7 @@ package controllers
 
 //焦点图管理--焦点图分类
 import "strconv"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 import "github.com/revel/revel"
 
 type FocusCate struct {

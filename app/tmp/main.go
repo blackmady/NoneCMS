@@ -5,25 +5,25 @@ import (
 	"flag"
 	"reflect"
 	"github.com/revel/revel"
-	_ "admin/app"
-	controllers "admin/app/controllers"
-	controllers0 "admin/app/controllers/Content"
-	controllers1 "admin/app/controllers/Extend"
-	controllers2 "admin/app/controllers/Module"
-	controllers3 "admin/app/controllers/Panel"
-	controllers4 "admin/app/controllers/Plugin"
-	controllers5 "admin/app/controllers/Public"
-	controllers6 "admin/app/controllers/Setting"
-	controllers7 "admin/app/controllers/Style"
-	controllers8 "admin/app/controllers/User"
-	models "admin/app/models"
-	tests "admin/tests"
-	controllers9 "github.com/revel/revel/modules/jobs/app/controllers"
+	_ "github.com/blackmady/NoneCMS/app"
+	controllers "github.com/blackmady/NoneCMS/app/controllers"
+	controllers0 "github.com/blackmady/NoneCMS/app/controllers/Content"
+	controllers1 "github.com/blackmady/NoneCMS/app/controllers/Extend"
+	controllers2 "github.com/blackmady/NoneCMS/app/controllers/Module"
+	controllers3 "github.com/blackmady/NoneCMS/app/controllers/Panel"
+	controllers4 "github.com/blackmady/NoneCMS/app/controllers/Plugin"
+	controllers5 "github.com/blackmady/NoneCMS/app/controllers/Public"
+	controllers6 "github.com/blackmady/NoneCMS/app/controllers/Setting"
+	controllers7 "github.com/blackmady/NoneCMS/app/controllers/Style"
+	controllers8 "github.com/blackmady/NoneCMS/app/controllers/User"
+	models "github.com/blackmady/NoneCMS/app/models"
+	controllers11 "github.com/revel/revel/modules/jobs/app/controllers"
 	_ "github.com/revel/revel/modules/jobs/app/jobs"
 	controllers12 "github.com/revel/revel/modules/pprof/app/controllers"
-	controllers11 "github.com/revel/revel/modules/static/app/controllers"
+	controllers9 "github.com/revel/revel/modules/static/app/controllers"
 	_ "github.com/revel/revel/modules/testrunner/app"
 	controllers10 "github.com/revel/revel/modules/testrunner/app/controllers"
+	"github.com/revel/revel/testing"
 )
 
 var (
@@ -69,6 +69,119 @@ func main() {
 					135: []string{ 
 						"title",
 					},
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers0.Focus)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Index",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					50: []string{ 
+						"title",
+						"focus_list",
+						"Cate_list",
+						"where",
+						"pages",
+					},
+					54: []string{ 
+						"title",
+						"focus_list",
+						"Cate_list",
+						"where",
+						"pages",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Add",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					70: []string{ 
+						"title",
+						"Cate_list",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Edit",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					284: []string{ 
+						"title",
+						"Cate_list",
+						"focus_info",
+					},
+					286: []string{ 
+						"title",
+						"Cate_list",
+					},
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers0.FocusCate)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Index",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					36: []string{ 
+						"title",
+						"focusCate_list",
+						"pages",
+					},
+					40: []string{ 
+						"title",
+						"focusCate_list",
+						"pages",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Add",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					53: []string{ 
+						"title",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Edit",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					122: []string{ 
+						"title",
+						"focusCate_info",
+					},
+					124: []string{ 
+						"title",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Delete",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
 				},
 			},
 			
@@ -316,119 +429,6 @@ func main() {
 			
 		})
 	
-	revel.RegisterController((*controllers0.Focus)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Index",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					50: []string{ 
-						"title",
-						"focus_list",
-						"Cate_list",
-						"where",
-						"pages",
-					},
-					54: []string{ 
-						"title",
-						"focus_list",
-						"Cate_list",
-						"where",
-						"pages",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Add",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					70: []string{ 
-						"title",
-						"Cate_list",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Edit",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focus", Type: reflect.TypeOf((**models.Focus)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					284: []string{ 
-						"title",
-						"Cate_list",
-						"focus_info",
-					},
-					286: []string{ 
-						"title",
-						"Cate_list",
-					},
-				},
-			},
-			
-		})
-	
-	revel.RegisterController((*controllers0.FocusCate)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Index",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					36: []string{ 
-						"title",
-						"focusCate_list",
-						"pages",
-					},
-					40: []string{ 
-						"title",
-						"focusCate_list",
-						"pages",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Add",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					53: []string{ 
-						"title",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Edit",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					122: []string{ 
-						"title",
-						"focusCate_info",
-					},
-					124: []string{ 
-						"title",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Delete",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "focusCate", Type: reflect.TypeOf((**models.FocusCate)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-				},
-			},
-			
-		})
-	
 	revel.RegisterController((*controllers1.Copyfrom)(nil),
 		[]*revel.MethodType{
 			&revel.MethodType{
@@ -637,6 +637,22 @@ func main() {
 			
 		})
 	
+	revel.RegisterController((*controllers5.Test)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Index",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "admin", Type: reflect.TypeOf((**models.Admin)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					38: []string{ 
+						"title",
+					},
+				},
+			},
+			
+		})
+	
 	revel.RegisterController((*controllers5.Ajax)(nil),
 		[]*revel.MethodType{
 			&revel.MethodType{
@@ -800,22 +816,6 @@ func main() {
 				},
 				RenderArgNames: map[int][]string{ 
 					60: []string{ 
-					},
-				},
-			},
-			
-		})
-	
-	revel.RegisterController((*controllers5.Test)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Index",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "admin", Type: reflect.TypeOf((**models.Admin)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					38: []string{ 
-						"title",
 					},
 				},
 			},
@@ -1408,55 +1408,7 @@ func main() {
 			
 		})
 	
-	revel.RegisterController((*controllers9.Jobs)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Status",
-				Args: []*revel.MethodArg{ 
-				},
-				RenderArgNames: map[int][]string{ 
-					19: []string{ 
-						"entries",
-					},
-				},
-			},
-			
-		})
-	
-	revel.RegisterController((*controllers10.TestRunner)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Index",
-				Args: []*revel.MethodArg{ 
-				},
-				RenderArgNames: map[int][]string{ 
-					48: []string{ 
-						"testSuites",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Run",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "suite", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "test", Type: reflect.TypeOf((*string)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					78: []string{ 
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "List",
-				Args: []*revel.MethodArg{ 
-				},
-				RenderArgNames: map[int][]string{ 
-				},
-			},
-			
-		})
-	
-	revel.RegisterController((*controllers11.Static)(nil),
+	revel.RegisterController((*controllers9.Static)(nil),
 		[]*revel.MethodType{
 			&revel.MethodType{
 				Name: "Serve",
@@ -1475,6 +1427,54 @@ func main() {
 					&revel.MethodArg{Name: "filepath", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers10.TestRunner)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Index",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+					70: []string{ 
+						"testSuites",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Run",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "suite", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "test", Type: reflect.TypeOf((*string)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+					107: []string{ 
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "List",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers11.Jobs)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Status",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+					25: []string{ 
+						"entries",
+					},
 				},
 			},
 			
@@ -1504,6 +1504,13 @@ func main() {
 				},
 			},
 			&revel.MethodType{
+				Name: "Trace",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+				},
+			},
+			&revel.MethodType{
 				Name: "Index",
 				Args: []*revel.MethodArg{ 
 				},
@@ -1514,7 +1521,7 @@ func main() {
 		})
 	
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
-		"admin/app/models.(*Admin).Validate": { 
+		"github.com/blackmady/NoneCMS/app/models.(*Admin).Validate": { 
 			42: "a.Username",
 			43: "a.Username",
 			57: "a.Email",
@@ -1522,22 +1529,21 @@ func main() {
 			72: "a.Password",
 			73: "a.Password",
 		},
-		"admin/app/models.(*Menu).Validate": { 
+		"github.com/blackmady/NoneCMS/app/models.(*Menu).Validate": { 
 			32: "menu.Name",
 			33: "menu.Name",
 			34: "menu.Pid",
 			35: "menu.Url",
 			36: "menu.Order",
 		},
-		"admin/app/models.(*Password).ValidatePassword": { 
+		"github.com/blackmady/NoneCMS/app/models.(*Password).ValidatePassword": { 
 			78: "P.Password",
 			79: "P.PasswordConfirm",
 			81: "P.Password",
 			82: "P.Password",
 		},
 	}
-	revel.TestSuites = []interface{}{ 
-		(*tests.AppTest)(nil),
+	testing.TestSuites = []interface{}{ 
 	}
 
 	revel.Run(*port)

@@ -27,6 +27,79 @@ func (_ tApp) Main(
 }
 
 
+type tFocus struct {}
+var Focus tFocus
+
+
+func (_ tFocus) Index(
+		focus interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focus", focus)
+	return revel.MainRouter.Reverse("Focus.Index", args).Url
+}
+
+func (_ tFocus) Add(
+		focus interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focus", focus)
+	return revel.MainRouter.Reverse("Focus.Add", args).Url
+}
+
+func (_ tFocus) Edit(
+		focus interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focus", focus)
+	return revel.MainRouter.Reverse("Focus.Edit", args).Url
+}
+
+
+type tFocusCate struct {}
+var FocusCate tFocusCate
+
+
+func (_ tFocusCate) Index(
+		focusCate interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focusCate", focusCate)
+	return revel.MainRouter.Reverse("FocusCate.Index", args).Url
+}
+
+func (_ tFocusCate) Add(
+		focusCate interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focusCate", focusCate)
+	return revel.MainRouter.Reverse("FocusCate.Add", args).Url
+}
+
+func (_ tFocusCate) Edit(
+		focusCate interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focusCate", focusCate)
+	return revel.MainRouter.Reverse("FocusCate.Edit", args).Url
+}
+
+func (_ tFocusCate) Delete(
+		focusCate interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "focusCate", focusCate)
+	return revel.MainRouter.Reverse("FocusCate.Delete", args).Url
+}
+
+
 type tCategory struct {}
 var Category tCategory
 
@@ -190,79 +263,6 @@ func (_ tContent) Edit(
 }
 
 
-type tFocus struct {}
-var Focus tFocus
-
-
-func (_ tFocus) Index(
-		focus interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focus", focus)
-	return revel.MainRouter.Reverse("Focus.Index", args).Url
-}
-
-func (_ tFocus) Add(
-		focus interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focus", focus)
-	return revel.MainRouter.Reverse("Focus.Add", args).Url
-}
-
-func (_ tFocus) Edit(
-		focus interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focus", focus)
-	return revel.MainRouter.Reverse("Focus.Edit", args).Url
-}
-
-
-type tFocusCate struct {}
-var FocusCate tFocusCate
-
-
-func (_ tFocusCate) Index(
-		focusCate interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focusCate", focusCate)
-	return revel.MainRouter.Reverse("FocusCate.Index", args).Url
-}
-
-func (_ tFocusCate) Add(
-		focusCate interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focusCate", focusCate)
-	return revel.MainRouter.Reverse("FocusCate.Add", args).Url
-}
-
-func (_ tFocusCate) Edit(
-		focusCate interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focusCate", focusCate)
-	return revel.MainRouter.Reverse("FocusCate.Edit", args).Url
-}
-
-func (_ tFocusCate) Delete(
-		focusCate interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "focusCate", focusCate)
-	return revel.MainRouter.Reverse("FocusCate.Delete", args).Url
-}
-
-
 type tCopyfrom struct {}
 var Copyfrom tCopyfrom
 
@@ -413,6 +413,20 @@ func (_ tPlugin) Index(
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("Plugin.Index", args).Url
+}
+
+
+type tTest struct {}
+var Test tTest
+
+
+func (_ tTest) Index(
+		admin interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "admin", admin)
+	return revel.MainRouter.Reverse("Test.Index", args).Url
 }
 
 
@@ -579,20 +593,6 @@ func (_ tPublic) Message(
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("Public.Message", args).Url
-}
-
-
-type tTest struct {}
-var Test tTest
-
-
-func (_ tTest) Index(
-		admin interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "admin", admin)
-	return revel.MainRouter.Reverse("Test.Index", args).Url
 }
 
 
@@ -997,15 +997,32 @@ func (_ tUser) Left(
 }
 
 
-type tJobs struct {}
-var Jobs tJobs
+type tStatic struct {}
+var Static tStatic
 
 
-func (_ tJobs) Status(
+func (_ tStatic) Serve(
+		prefix string,
+		filepath string,
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("Jobs.Status", args).Url
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.Serve", args).Url
+}
+
+func (_ tStatic) ServeModule(
+		moduleName string,
+		prefix string,
+		filepath string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "moduleName", moduleName)
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
 }
 
 
@@ -1039,32 +1056,15 @@ func (_ tTestRunner) List(
 }
 
 
-type tStatic struct {}
-var Static tStatic
+type tJobs struct {}
+var Jobs tJobs
 
 
-func (_ tStatic) Serve(
-		prefix string,
-		filepath string,
+func (_ tJobs) Status(
 		) string {
 	args := make(map[string]string)
 	
-	revel.Unbind(args, "prefix", prefix)
-	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.Serve", args).Url
-}
-
-func (_ tStatic) ServeModule(
-		moduleName string,
-		prefix string,
-		filepath string,
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "moduleName", moduleName)
-	revel.Unbind(args, "prefix", prefix)
-	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
+	return revel.MainRouter.Reverse("Jobs.Status", args).Url
 }
 
 
@@ -1091,6 +1091,13 @@ func (_ tPprof) Cmdline(
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("Pprof.Cmdline", args).Url
+}
+
+func (_ tPprof) Trace(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("Pprof.Trace", args).Url
 }
 
 func (_ tPprof) Index(

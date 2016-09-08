@@ -12,7 +12,7 @@ package models
 
 //焦点图分类表
 import "time"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

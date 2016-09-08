@@ -13,7 +13,7 @@ package models
 //角色表
 import "time"
 import "html/template"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "github.com/revel/revel"
 
 type Role struct {

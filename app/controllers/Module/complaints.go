@@ -13,7 +13,7 @@ package controllers
 //模块管理--投诉建议
 import "strconv"
 import "github.com/revel/revel"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 
 type Complaints struct {
 	*revel.Controller

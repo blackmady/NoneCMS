@@ -13,7 +13,7 @@ package models
 //会员
 import "fmt"
 import "time"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

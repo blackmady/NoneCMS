@@ -12,7 +12,7 @@ package controllers
 
 // 角色设置
 import "strconv"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 import "github.com/revel/revel"
 
 type Role struct {

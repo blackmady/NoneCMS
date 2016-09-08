@@ -12,7 +12,7 @@ package controllers
 
 //日志管理
 import "strconv"
-import "admin/app/models"
+import "github.com/blackmady/NoneCMS/app/models"
 import "github.com/revel/revel"
 
 type Logs struct {

@@ -13,7 +13,7 @@ package models
 //管理员表
 import "time"
 import "regexp"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

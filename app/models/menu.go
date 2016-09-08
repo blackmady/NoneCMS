@@ -13,7 +13,7 @@ package models
 //菜单管理
 import "strconv"
 import "strings"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

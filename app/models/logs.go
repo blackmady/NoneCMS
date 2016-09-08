@@ -15,7 +15,7 @@ import "fmt"
 import "time"
 import "strings"
 import "strconv"
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 

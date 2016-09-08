@@ -11,7 +11,7 @@
 package models
 
 //投诉建议
-import "admin/utils"
+import "github.com/blackmady/NoneCMS/utils"
 import "html/template"
 import "github.com/revel/revel"
 
